@@ -8,7 +8,7 @@ import math
 # warnings.simplefilter(action='ignore', category=FutureWarning)
 
 
-df = pd.read_csv('~/Downloads/heart.csv')
+df = pd.read_csv('../cardio-prediction/heart.csv')  # '..' means the directory in which you have cloned this repository
 o2 = pd.read_csv('~/Downloads/o2Saturation.csv')
 o2 = o2['98.6'][:303].tolist()
 # o2_list = o2_list[:303]
