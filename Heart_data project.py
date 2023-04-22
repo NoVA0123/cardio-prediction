@@ -18,11 +18,11 @@ print(df.head())
 # finding gender ratio through pie chart
 female = len(df[df['sex'] == 0])
 male = len(df[df['sex'] == 1])
-# print(len(df), female, male)
+print(len(df), female, male)
 
 
 # plotting the data
-plt.pie([female, male], labels=['female','male'])
+plt.pie([female, male], labels=['female', 'male'])
 plt.show()
 
 
@@ -32,9 +32,10 @@ anginal_typical = len(anginal_pain[anginal_pain['cp'] == 1])
 anginal_atypical = len(anginal_pain[anginal_pain['cp'] == 2])
 
 # plotting the graph
-plt.bar(['typical', 'atypical'],[anginal_typical, anginal_atypical])
+plt.bar(['typical', 'atypical'], [anginal_typical, anginal_atypical])
 plt.show()
-
+print(f'Anginal typical = {anginal_typical}\n',
+      f'Anginal atypical = {anginal_atypical}')
 
 # analysing blood pressure
 print(df['trtbps'].min(), df['trtbps'].max())
@@ -82,11 +83,12 @@ heart_rate_data = heart_rate_calculator(df, 'trtbps', heartrate)
 
 
 # Plotting the data
-plt.bar([x for x in heart_rate_data.keys()],
-        [x for x in heart_rate_data.values()])
+names, values = [x for x in heart_rate_data.keys()], [x for x in heart_rate_data.values()]
+for x in range(len(names)):
+    print(f'{names[x]} = {values[x]}')
+plt.bar(names, values)
 plt.show()
 
-print(heart_data)
 '''
 # Applying ML model SVM
 
