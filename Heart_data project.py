@@ -83,13 +83,12 @@ heart_rate_data = heart_rate_calculator(df, 'trtbps', heartrate)
 
 
 # Plotting the data
-names, values = [x for x in heart_rate_data.keys()], [x for x in heart_rate_data.values()]
+names, values = [x for x in heart_rate_data.keys()],[x for x in heart_rate_data.values()]
 for x in range(len(names)):
     print(f'{names[x]} = {values[x]}')
 plt.bar(names, values)
 plt.show()
 
-'''
 # Applying ML model SVM
 
 # Creating new variables for training and testing
@@ -105,4 +104,4 @@ clf.fit(X_train, y_train)
 
 
 # Finding accuracy
-print(clf.score(X_test, y_test))'''
+print(clf.score(X_test, y_test))
